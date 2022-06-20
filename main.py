@@ -25,8 +25,11 @@ def main(owner, name):
     for file in os.listdir('./'):
         if file != ".git" and file != output:
             print("Deleting:\t\t",file)
-            shutil.rmtree(file)
-            
+            if os.path.isdir(file):
+                shutil.rmtree(file)
+            else:
+                os.remove(file)
+
     # Move output to parent folder
     for root, dirs, files in os.walk(output):
         for f in files:
