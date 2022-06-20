@@ -1,2 +1,6 @@
-# crate-template
-Repository template for creating a crate to be used in an organization repository
+<div align="center">
+
+# Please wait until the template workflow finishes
+
+Once it's finished you'll have to refresh the page
+</div>
