@@ -21,9 +21,7 @@ def main(owner, name):
                     text = source.read()
                     text = text.replace("${{OWNER}}",owner)
                     text = text.replace("${{NAME}}",name)
-                    file.write(text)
-    exit(0)
-    
+                    file.write(text)    
 
     # Remove all unnecessary files                    
     for file in os.listdir('./'):
