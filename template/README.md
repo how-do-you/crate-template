@@ -1,6 +1,6 @@
 <div align="center">
 
-# ${{NAME}}
+# ${{NAME_PRETTY}}
 
 ![Build status](https://img.shields.io/github/checks-status/${{OWNER}}/${{NAME}}/main)
 </div>

@@ -21,6 +21,7 @@ def main(owner, name):
                     text = source.read()
                     text = text.replace("${{OWNER}}",owner)
                     text = text.replace("${{NAME}}",name)
+                    text = text.replace("${{NAME_PRETTY}}",name.replace('-',' ').replace('_',' ').title())
                     file.write(text)    
 
     # Remove all unnecessary files                    
