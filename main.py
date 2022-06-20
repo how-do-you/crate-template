@@ -18,7 +18,11 @@ def main(owner, name):
             os.makedirs(os.path.dirname(target_file), exist_ok=True)
             with open(os.path.join(root,f)) as source:
                 with open(target_file,'w') as file:
-                    file.write(source.read())
+                    text = source.read()
+                    text = text.replace("${{OWNER}}",owner)
+                    text = text.replace("${{NAME}}",name)
+                    file.write(text)
+    exit(0)
     
 
     # Remove all unnecessary files                    

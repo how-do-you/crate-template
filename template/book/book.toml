@@ -1,0 +1,6 @@
+[book]
+authors = ["${{OWNER}}"]
+language = "en"
+multilingual = false
+src = "src"
+title = "${{NAME}}"
