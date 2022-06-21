@@ -69,7 +69,7 @@ if __name__ == "__main__":
     name = args.name.split('/')[1]
 
     options = {
-        "template": "tauri"
+        "template": "none"
     }
 
     r = requests.get(f"https://api.github.com/repos/{owner}/{name}")
