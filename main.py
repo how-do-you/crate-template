@@ -17,7 +17,7 @@ def main(owner: str, name: str, options: dict):
     # Generate output
     for root, dirs, files in os.walk(f'templates/{options["template"]}'):
         for f in files:
-            target_file = os.path.join(output, os.path.sep.join(os.path.join(root, f).split(os.path.sep)[1:]))
+            target_file = os.path.join(output, os.path.sep.join(os.path.join(root, f).split(os.path.sep)[2:]))
             print("Creating:\t\t", target_file)
             os.makedirs(os.path.dirname(target_file), exist_ok=True)
             with open(os.path.join(root, f), 'rb') as source:
