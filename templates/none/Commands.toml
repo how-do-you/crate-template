@@ -1,1 +1,2 @@
-setup = "echo Hello World!"
+dev = { cmd = "cargo run" }
+build = { cmd = "cargo build" }

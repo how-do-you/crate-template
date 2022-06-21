@@ -3,7 +3,8 @@
     "beforeBuildCommand": "",
     "beforeDevCommand": "yarn dev",
     "devPath": "../dist",
-    "distDir": "../dist"
+    "distDir": "../dist",
+    "withGlobalTauri": true
   },
   "package": {
     "productName": "hello",
