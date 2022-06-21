@@ -42,5 +42,4 @@ jobs:
           git commit --amend -m "Initial commit"
           git branch -D template
           git rebase --root
-          git push
-
+          git push -u origin main
