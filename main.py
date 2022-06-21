@@ -77,7 +77,7 @@ if __name__ == "__main__":
         data = json.loads(r.text)
         if data["description"] is not None and data["description"] != "":
             args = data["description"].split(' ')
-            valid_templates = ["tauri"]
+            valid_templates = ["tauri", "none"]
             if args[0] in valid_templates:
                 options["template"] = args[0]
 
