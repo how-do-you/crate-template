@@ -1,0 +1,14 @@
+name: Simple test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Print Hello
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run main.py
+        run: echo "Hello"
