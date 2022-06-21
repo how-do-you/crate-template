@@ -1,19 +1,22 @@
 import argparse
 import os
 import shutil
+import requests
+import json
 
-def main(owner, name):
+def main(owner:str, name:str,options:dict):
     output = "output"
     print("Owner name:\t\t", owner)
     print("Crate name:\t\t", name)
+    print("Template:\t\t", options["template"])
     print("Output path:\t\t", output)
     print("")
     os.makedirs(output, exist_ok=True)
 
     # Generate output
-    for root, dirs, files in os.walk('template'):
+    for root, dirs, files in os.walk(f'templates/{options["template"]}'):
         for f in files:
-            target_file = os.path.join(output,os.path.sep.join(os.path.join(root,f).split(os.path.sep)[1:]))
+            target_file = os.path.join(output,os.path.sep.join(os.path.join(root,f).split(os.path.sep)[2:]))
             print("Creating:\t\t",target_file)
             os.makedirs(os.path.dirname(target_file), exist_ok=True)
             with open(os.path.join(root,f)) as source:
@@ -55,4 +58,20 @@ if __name__ == "__main__":
     parser.add_argument('name', type=str, help='an integer for the accumulator')
 
     args = parser.parse_args()
-    main(args.name.split('/')[0], args.name.split('/')[1])
+
+    owner = args.name.split('/')[0]
+    name = args.name.split('/')[1]
+
+    options = {
+        "template":"none"
+    }
+
+    r = requests.get(f"https://api.github.com/repos/{owner}/{name}")
+    if r.status_code == 200:
+        data = json.loads(r.text)
+        args = data["description"].split(' ')
+        valid_templates = ["tauri"]
+        if args[0] in valid_templates:
+            options["template"] = args[0]
+
+    main(owner,name,options)
