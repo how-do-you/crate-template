@@ -33,6 +33,12 @@ jobs:
           git rm -rf .
           git commit --allow-empty --allow-empty-message -m "Initial commit"
           git merge --squash --allow-unrelated-histories template
+          git lfs track *.png
+          git lfs track *.jpg
+          git lfs track *.jpeg
+          git lfs track *.ico
+          git lfs track *.icns
+          git add .
           git commit --amend
           git branch -D template
           git rebase --root
