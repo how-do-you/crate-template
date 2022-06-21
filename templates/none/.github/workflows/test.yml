@@ -20,5 +20,5 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-      - name: Install app dependencies and build it
+      - name: Run tests
         run: cargo test
