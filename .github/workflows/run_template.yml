@@ -39,7 +39,7 @@ jobs:
           git lfs track *.ico
           git lfs track *.icns
           git add .
-          git commit --amend
+          git commit --amend -m "Initial commit"
           git branch -D template
           git rebase --root
           git push
