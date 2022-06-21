@@ -7,7 +7,7 @@ mod lib;
 
 #[tauri::command]
 fn tauri_command() {
-    lib::print_hello();
+    let _ = lib::print_hello();
 }
 
 fn main() -> Result<(),()> {

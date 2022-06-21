@@ -8,9 +8,8 @@
 ## Getting started
 
 ```shell
-# Commands that the user can run to run the project
-# For example, install cargo-commander
+# Install cargo-commander
 cargo install cargo-commander
-# Run setup functions
-cargo cmd setup
+# Read the documentation
+cargo cmd doc
 ```

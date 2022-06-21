@@ -1,2 +1,4 @@
 dev = { cmd = "cargo run" }
 build = { cmd = "cargo build" }
+test = { cmd = "cargo test" }
+doc = { cmd = "cargo doc --open --examples --no-deps" }

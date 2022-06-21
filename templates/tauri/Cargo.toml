@@ -8,9 +8,9 @@ authors = ["${{OWNER}}"]
 license = ""
 repository = ""
 default-run = "${{NAME}}"
-[workspace]
 
 [build-dependencies]
+mdbook-to-example = "0.1.0"
 tauri-build = { version = "1.0" }
 
 [dependencies]

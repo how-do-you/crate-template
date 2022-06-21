@@ -1,6 +1,6 @@
 mod lib;
 
 fn main() -> Result<(),()> {
-    lib::print_hello();
+    let _ = lib::print_hello();
     Ok(())
 }
