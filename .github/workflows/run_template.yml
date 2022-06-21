@@ -27,5 +27,12 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
-          git commit -m "Initial commit"
-          git push
+          git commit -m "Template files created"
+          git branch -M main template
+          git checkout --orphan main
+          git rm -rf .
+          git commit --allow-empty --allow-empty-message -m "Initial commit"
+          git merge --squash --allow-unrelated-histories template
+          git commit --amend
+          git branch -D template
+          git rebase --root
