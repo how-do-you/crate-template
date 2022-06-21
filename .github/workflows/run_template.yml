@@ -42,3 +42,5 @@ jobs:
           git commit --amend
           git branch -D template
           git rebase --root
+          git push
+
