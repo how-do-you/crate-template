@@ -19,8 +19,8 @@ def main(owner:str, name:str,options:dict):
             target_file = os.path.join(output,os.path.sep.join(os.path.join(root,f).split(os.path.sep)[2:]))
             print("Creating:\t\t",target_file)
             os.makedirs(os.path.dirname(target_file), exist_ok=True)
-            with open(os.path.join(root,f)) as source:
-                with open(target_file,'w') as file:
+            with open(os.path.join(root,f), 'rb') as source:
+                with open(target_file,'wb') as file:
                     text = source.read()
                     text = text.replace("${{OWNER}}",owner)
                     text = text.replace("${{NAME}}",name)
@@ -45,8 +45,8 @@ def main(owner:str, name:str,options:dict):
             if d == "":
                 d = "."
             os.makedirs(d, exist_ok=True)
-            with open(os.path.join(root,f)) as source:
-                with open(target_file,'w') as file:
+            with open(os.path.join(root,f), 'rb') as source:
+                with open(target_file,'wb') as file:
                     file.write(source.read())
     # Remove output folder
     print("Deleting:\t\t", output)
