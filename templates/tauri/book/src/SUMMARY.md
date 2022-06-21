@@ -2,4 +2,4 @@
 
 [Introduction](./introduction.md)
 
-- [Chapter 1](./getting_started.md)
+- [Getting started](./getting_started.md)
