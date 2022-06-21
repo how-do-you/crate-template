@@ -16,25 +16,9 @@ jobs:
         uses: actions/checkout@v2
         with:
           - lfs: true
-      - name: Setup node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16
       - name: Install Rust stable
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-      - name: Install dependencies (ubuntu only)
-        if: matrix.platform == 'ubuntu-latest'
-        run: |
-          sudo apt-get update
-          sudo apt install libwebkit2gtk-4.0-dev \
-              build-essential \
-              curl \
-              wget \
-              libssl-dev \
-              libgtk-3-dev \
-              libayatana-appindicator3-dev \
-              librsvg2-dev
       - name: Install app dependencies and build it
         run: cargo test

@@ -17,12 +17,12 @@ project to Private the "none" template will be used. You can change the visibili
 initial workflow has been run, it just has to be public for the template creation process to be able to fetch the repo
 description.
 
-**IMPORTANT:** Since there's no easy and secure way of passing an API token to the workflow at the creation stage that
-gives access to writing to the `.github/workflows` directory, the templates will simply create the
-directory `github.workflows` (removing the `.`) instead. So one of the first steps you'll want to do after creating the
-project is to change the name of `github` to `.github`. A planned feature is to check for a `WORKFLOW_TOKEN` secret in
-the organization that the repo is being created it, and if detected the `.github` directory is created directly instead,
-but that will only work for organizations.
+**IMPORTANT:** If your repository is created inside an organization, you can set an organization secret
+called `WORKFLOW_TOKEN` with the contents of a PAT (personal access token) that has the `workflows` scope. That way the
+template will automatically create the `.github` folder with a base set of workflows to perform common tasks. Personal
+accounts and organizations without a `WORKFLOW_TOKEN` secret will have the `.github` directory renamed to `github` (
+the `.` removed) so that all you have to do to get the base set of workflows running is check out the repository and
+rename the folder.
 
 ### none
 
