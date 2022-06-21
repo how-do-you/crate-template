@@ -21,11 +21,15 @@ def main(owner:str, name:str,options:dict):
             os.makedirs(os.path.dirname(target_file), exist_ok=True)
             with open(os.path.join(root,f), 'rb') as source:
                 with open(target_file,'wb') as file:
-                    text = source.read()
-                    text = text.replace("${{OWNER}}",owner)
-                    text = text.replace("${{NAME}}",name)
-                    text = text.replace("${{NAME_PRETTY}}",name.replace('-',' ').replace('_',' ').title())
-                    file.write(text)    
+                    data = source.read()
+                    try:
+                        text = data.decode()
+                        text = text.replace("${{OWNER}}",owner)
+                        text = text.replace("${{NAME}}",name)
+                        text = text.replace("${{NAME_PRETTY}}",name.replace('-',' ').replace('_',' ').title())
+                        file.write(text.encode('utf-8'))
+                    except:
+                        file.write(data)
 
     # Remove all unnecessary files                    
     for file in os.listdir('./'):
