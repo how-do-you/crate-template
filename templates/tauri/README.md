@@ -2,7 +2,7 @@
 
 # ${{NAME_PRETTY}}
 
-![Build status](https://img.shields.io/github/checks-status/${{OWNER}}/${{NAME}}/main)
+[![Build status](https://img.shields.io/github/checks-status/${{OWNER}}/${{NAME}}/main)](https://github.com/${{OWNER}}/${{NAME}}/actions)
 </div>
 
 ## Getting started
