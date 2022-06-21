@@ -73,7 +73,7 @@ if __name__ == "__main__":
     r = requests.get(f"https://api.github.com/repos/{owner}/{name}")
     if r.status_code == 200:
         data = json.loads(r.text)
-        if data["description"] is not None:
+        if data["description"] is not None && data["description"] != "":
             args = data["description"].split(' ')
             valid_templates = ["tauri"]
             if args[0] in valid_templates:
