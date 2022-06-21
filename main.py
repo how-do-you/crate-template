@@ -69,9 +69,10 @@ if __name__ == "__main__":
     r = requests.get(f"https://api.github.com/repos/{owner}/{name}")
     if r.status_code == 200:
         data = json.loads(r.text)
-        args = data["description"].split(' ')
-        valid_templates = ["tauri"]
-        if args[0] in valid_templates:
-            options["template"] = args[0]
+        if data["description"] is not None:
+            args = data["description"].split(' ')
+            valid_templates = ["tauri"]
+            if args[0] in valid_templates:
+                options["template"] = args[0]
 
     main(owner,name,options)
