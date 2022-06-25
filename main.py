@@ -60,8 +60,7 @@ def main(owner: str, name: str, options: dict):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Create project from template')
-    parser.add_argument('name', type=str, help='an integer for the accumulator')
-    parser.add_argument('WORKFLOW_TOKEN', default='', nargs='?', type=str, help='an integer for the accumulator')
+    parser.add_argument('name', type=str, help='owner/name of the repository')
 
     args = parser.parse_args()
 
